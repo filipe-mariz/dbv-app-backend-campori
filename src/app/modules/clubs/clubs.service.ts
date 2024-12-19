@@ -19,4 +19,8 @@ export class ClubsService {
       name: data.name
     }))
   }
+
+  async findOne(id: string) {
+    return this.database.findOneClubWithUnits(id);
+  }
 }

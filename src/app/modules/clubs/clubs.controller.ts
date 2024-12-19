@@ -15,4 +15,9 @@ export class ClubsController {
   findAll() {
     return this.clubsService.findAll();
   }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.clubsService.findOne(id);
+  }
 }

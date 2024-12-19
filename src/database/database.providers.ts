@@ -2,8 +2,9 @@ import { SequelizeModule } from '@nestjs/sequelize';
 import { Sequelize } from 'sequelize-typescript';
 
 import { club } from 'src/app/modules/clubs/entities/club.entity'
+import { unit } from 'src/app/modules/unit/entities/unit.entity';
 
-const models = [club]
+const models = [club, unit]
 export const databaseProviders = [
   {
     provide: 'SEQUELIZE',

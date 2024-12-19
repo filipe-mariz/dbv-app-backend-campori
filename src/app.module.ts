@@ -3,11 +3,13 @@ import { databaseProviders, sequelizeModule } from './database/database.provider
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ClubsModule } from './app/modules/clubs/clubs.module';
+import { UnitModule } from './app/modules/unit/unit.module';
 
 @Module({
   imports: [
     sequelizeModule,
-    ClubsModule
+    ClubsModule,
+    UnitModule
   ],
   controllers: [AppController],
   providers: [
