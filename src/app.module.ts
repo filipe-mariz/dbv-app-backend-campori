@@ -11,7 +11,7 @@ import { PathfindersModule } from './app/modules/pathfinders/pathfinders.module'
     sequelizeModule,
     ClubsModule,
     UnitModule,
-    PathfindersModule
+    PathfindersModule,
   ],
   controllers: [AppController],
   providers: [

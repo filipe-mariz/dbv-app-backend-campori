@@ -21,22 +21,7 @@ export class pathfinder extends Model {
     responsibleName: string;
 
     @Column
-    responsibleEmail: string;
-
-    @Column
     responsiblePhone: string;
-
-    @Column
-    userAdress: string;
-
-    @Column
-    city: string;
-
-    @Column
-    motherName: string;
-
-    @Column
-    fatherName: string;
 
     @ForeignKey(() => unit)
     @Column({ allowNull: false })
