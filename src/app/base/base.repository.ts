@@ -15,6 +15,13 @@ export class BaseRepository {
 
   public async create(data: any) {
     await this.client.del(this.cacheKey);
+
+    if (Array.isArray(data)) {
+      return this.repository.bulkCreate(data, {
+        ignoreDuplicates: true,
+      })
+    }
+
     const response = await this.repository.create(data);
     return response;
   }

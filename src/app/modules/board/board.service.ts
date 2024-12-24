@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { PathfinderDatabase } from './database/pathfinders.database';
+import { BoardDatabase } from './database/board.database';
 import readXlsx from 'src/utils/readXlsx';
 
 @Injectable()
-export class PathfindersService {
+export class BoardService {
   constructor(
-    private readonly database: PathfinderDatabase
+    private readonly database: BoardDatabase
   ) {}
 
-  public bulkCreate({ file, body }) {
+  create({ file, body }) {
     const metadata = readXlsx(file);
     const parseData = this.parseData({ metadata, body });
 
@@ -21,14 +21,13 @@ export class PathfindersService {
       name: data['NOME DO USUARIO'],
       cpf: `${data['CPF']}` || '',
       bornDate: data['DATA DE NASCIMENTO'] || '',
-      responsibleName: data['RESPONSÁVEL'] || '',
-      responsiblePhone: `${data['TELELEFONE DO RESPONSÁVEL']}` || '',
+      position: data['DESCRIÇÃO DO CARGO'] || '',
       unit_id: body.unit_id,
       club_id: body.club_id
     }))
   }
 
   findAll() {
-    return this.database.findAll()
+    return `This action returns all board`;
   }
 }

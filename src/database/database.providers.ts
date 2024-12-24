@@ -4,8 +4,9 @@ import { Sequelize } from 'sequelize-typescript';
 import { club } from 'src/app/modules/clubs/entities/club.entity'
 import { pathfinder } from 'src/app/modules/pathfinders/entities/pathfinder.entity';
 import { unit } from 'src/app/modules/unit/entities/unit.entity';
+import { board } from 'src/app/modules/board/entities/board.entity';
 
-const models = [club, unit, pathfinder]
+const models = [club, unit, pathfinder, board]
 export const databaseProviders = [
   {
     provide: 'SEQUELIZE',

@@ -9,7 +9,7 @@ export class PathfindersController {
 
   @Post()
   @UseInterceptors(FileInterceptor('file'))
-  uploadFile(
+  public create(
     @UploadedFile() file: Express.Multer.File,
     @Body() body: CreatePathfinderDto
   ) {
