@@ -1,5 +1,5 @@
 import { Table, Model, Column, ForeignKey, BelongsTo, HasMany, HasOne } from "sequelize-typescript";
-import { defaulTableSettings, primaryKey } from "src/utils/global/GlobalSequelize";
+import { defaulTableSettings, primaryKey } from "src/utils/interfaces/GlobalSequelize";
 import { club } from "../../clubs/entities/club.entity";
 import { pathfinder } from "../../pathfinders/entities/pathfinder.entity";
 import { board } from "../../board/entities/board.entity";
@@ -11,6 +11,9 @@ export class unit extends Model {
 
     @Column
     name: string;
+
+    @Column
+    filePath: string;
 
     @HasMany(() => pathfinder)
     pathfinder: pathfinder[];

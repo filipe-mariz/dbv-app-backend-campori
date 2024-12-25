@@ -1,5 +1,5 @@
 import { Table, Column, ForeignKey, BelongsTo, Model } from "sequelize-typescript";
-import { defaulTableSettings, primaryKey } from "src/utils/global/GlobalSequelize";
+import { defaulTableSettings, primaryKey } from "src/utils/interfaces/GlobalSequelize";
 import { club } from "../../clubs/entities/club.entity";
 import { unit } from "../../unit/entities/unit.entity";
 

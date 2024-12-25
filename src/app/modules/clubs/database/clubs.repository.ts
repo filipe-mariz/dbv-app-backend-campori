@@ -13,7 +13,7 @@ export class ClubsRepository extends BaseRepository implements ClubDatabase {
   constructor(
     @InjectModel(club) clubsRepository: typeof club,
   ) {
-    super(clubsRepository, 'CLUBS')
+    super(clubsRepository, 'CLUBS');
   }
 
   public findOneClubWithUnits(id: string): any {

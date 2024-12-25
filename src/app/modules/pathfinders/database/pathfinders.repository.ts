@@ -10,6 +10,6 @@ export class PathfindersRepository extends BaseRepository implements PathfinderD
   constructor(
     @InjectModel(pathfinder) pathfindersRepository: string
   ) {
-    super(pathfindersRepository, 'pathfinders')
+    super(pathfindersRepository, 'PATHFINDERS')
   }
 }

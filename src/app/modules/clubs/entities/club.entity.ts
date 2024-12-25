@@ -1,5 +1,5 @@
 import { Table, Model, Column, HasMany } from "sequelize-typescript";
-import { defaulTableSettings, primaryKey } from "src/utils/global/GlobalSequelize";
+import { defaulTableSettings, primaryKey } from "src/utils/interfaces/GlobalSequelize";
 import { unit } from "../../unit/entities/unit.entity";
 import { pathfinder } from "../../pathfinders/entities/pathfinder.entity";
 import { board } from "../../board/entities/board.entity";

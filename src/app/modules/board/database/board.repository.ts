@@ -10,6 +10,6 @@ export class BoardRepository extends BaseRepository implements BoardDatabase {
   constructor(
     @InjectModel(board) boardsRepository: string
   ) {
-    super(boardsRepository, 'boards')
+    super(boardsRepository, 'BOARD')
   }
 }

@@ -1,6 +1,4 @@
-import crypto from 'crypto';
-
-export function generateRandomNumber() {
+const generateRandomNumber = () => {
 	const numeros = "0123456789";
 
 	let codigo = "";
