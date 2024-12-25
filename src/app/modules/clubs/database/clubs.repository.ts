@@ -20,7 +20,7 @@ export class ClubsRepository extends BaseRepository implements ClubDatabase {
     const defaultOptions = {
       paranoid: false,
       raw: false,
-      required: true,
+      required: false,
       where: {
         club_id: id,
         deletedAt: null,
