@@ -12,9 +12,9 @@ export class UnitController {
     return this.unitService.create(createUnitDto);
   }
 
-  @Get()
-  findAll() {
-    return this.unitService.findAll();
+  @Get(':club_id')
+  findAlbyClub(@Param('club_id') clubId: string) {
+    return this.unitService.findAll(clubId);
   }
 
   // @Get(':id')

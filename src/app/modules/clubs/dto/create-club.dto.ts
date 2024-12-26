@@ -1,6 +1,7 @@
 export class CreateClubDto {
     id: string;
     name: string;
+    boardVacancies: number;
 }
 
 export class IPathfinder {

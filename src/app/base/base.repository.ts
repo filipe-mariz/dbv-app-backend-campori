@@ -38,6 +38,22 @@ export class BaseRepository {
     return response;
   }
 
+  public async findByWhere(filter: any, attributes: Array<string>) {
+    const cache = await this.client.get(`${filter.club_id}_${this.cacheKey}`);
+    if (cache) {
+      return JSON.parse(cache);
+    }
+
+    const response = await this.repository.findAll({
+      where: { ...filter },
+      attributes,
+      logging: true
+    });
+
+    await this.client.set(`${filter.club_id}_${this.cacheKey}`, JSON.stringify(response));
+    return response;
+  }
+
   public async findOne(where: any): Promise<any> {
     return this.repository.findOne({ where });
   }

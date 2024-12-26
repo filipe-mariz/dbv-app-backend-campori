@@ -12,6 +12,9 @@ export class club extends Model {
     @Column
     name: string;
 
+    @Column
+    boardVacancies: number;
+
     @HasMany(() => unit)
     units: unit[];
 

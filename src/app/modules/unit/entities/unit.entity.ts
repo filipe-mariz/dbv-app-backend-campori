@@ -12,9 +12,6 @@ export class unit extends Model {
     @Column
     name: string;
 
-    @Column
-    filePath: string;
-
     @HasMany(() => pathfinder)
     pathfinder: pathfinder[];
 

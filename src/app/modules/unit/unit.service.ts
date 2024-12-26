@@ -10,15 +10,11 @@ export class UnitService {
   ) {}
 
   create(createUnitDto: CreateUnitDto) {
+    console.log(createUnitDto)
     return this.database.create(createUnitDto)
   }
 
-  async findAll() {
-    const resp = await this.database.findAll();
-    return resp.map((data: any) => ({
-      id: data.id,
-      name: data.name,
-      club_id: data.club_id
-    }))
+  async findAll(clubId: string) {
+    return this.database.findByWhere({ club_id: clubId }, ['id', 'name']);
   }
 }

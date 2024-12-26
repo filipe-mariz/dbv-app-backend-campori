@@ -1,7 +1,7 @@
 import { Controller, Body, Get, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { BoardService } from './board.service';
-import { CreateBoardDto } from './dto/create-board.dto';
+import { CreateBoardByScreenDto, CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
 
 @Controller('board')
@@ -10,9 +10,17 @@ export class BoardController {
 
   @Post()
   @UseInterceptors(FileInterceptor('file'))
-  public create(
+  public bulkCreatebyFile(
     @UploadedFile() file: Express.Multer.File,
     @Body() body: CreateBoardDto
+  ) {
+    return this.boardService.create({ file, body })
+  }
+
+  @Post()
+  public bulkCreatebyScreen(
+    @UploadedFile() file: Express.Multer.File,
+    @Body() body: Array<CreateBoardByScreenDto>
   ) {
     return this.boardService.create({ file, body })
   }

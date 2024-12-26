@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { BoardDatabase } from './database/board.database';
 import readXlsx from 'src/utils/readXlsx';
+import { CreateBoardByScreenDto } from './dto/create-board.dto';
 
 @Injectable()
 export class BoardService {
@@ -8,11 +9,15 @@ export class BoardService {
     private readonly database: BoardDatabase
   ) {}
 
-  create({ file, body }) {
+  public create({ file, body }) {
     const metadata = readXlsx(file);
     const parseData = this.parseData({ metadata, body });
 
     return this.database.create(parseData);
+  }
+
+  public createByScreen(body: Array<CreateBoardByScreenDto>) {
+    return this.database.create(body);
   }
 
   private parseData({ metadata, body }) {
