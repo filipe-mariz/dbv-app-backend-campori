@@ -12,6 +12,9 @@ export class unit extends Model {
     @Column
     name: string;
 
+    @Column
+    pathfindersVacancies: number;
+
     @HasMany(() => pathfinder)
     pathfinder: pathfinder[];
 

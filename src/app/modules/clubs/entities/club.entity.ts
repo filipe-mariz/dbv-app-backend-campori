@@ -13,6 +13,9 @@ export class club extends Model {
     name: string;
 
     @Column
+    paymentFilePath: string;
+
+    @Column
     boardVacancies: number;
 
     @HasMany(() => unit)

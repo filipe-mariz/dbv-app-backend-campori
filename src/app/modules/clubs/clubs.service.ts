@@ -25,6 +25,12 @@ export class ClubsService {
     }
   }
 
+  public uploadPaymentFile(id: string, file: any) {
+    console.log('data', {
+      id, file
+    })
+  }
+
   async findAll() {
     const resp = await this.clubDatabase.findAll();
     return resp.map((data: any) => ({
