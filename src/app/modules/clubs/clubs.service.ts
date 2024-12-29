@@ -31,6 +31,13 @@ export class ClubsService {
     })
   }
 
+  public update(id: string, data: CreateClubDto) {
+    console.log({
+      id,
+      data
+    })
+  }
+
   async findAll() {
     const resp = await this.clubDatabase.findAll();
     return resp.map((data: any) => ({
